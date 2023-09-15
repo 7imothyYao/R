@@ -1,4 +1,3 @@
 # R
 
-R studio Nothing special
-something maybe
+Yo bro w's up
