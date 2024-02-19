@@ -1,0 +1,52 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+cat("\014");rm(list=ls())
+setwd("/Users/tim/Rcode/TestCode")
+```
+
+```{r}
+dta_beer=read.csv("beer.csv",header=T, stringsAsFactors = F)
+dt = dta_beer[,c("calorie","Na","alcohol","price")]
+```
+
+```{r}
+dist_mahala = function(DATA1){
+  cov_data = cov(DATA1)
+  n_row = nrow(DATA1)
+  dstM = matrix(nrow = n_row, ncol = n_row)
+  for (i in 1:(n_row-1)) {
+    for (j in (i+1):n_row) {
+      diff=as.matrix(DATA1[i,]-DATA1[j,])
+      dstM[i,j] = sqrt(diff %*% solve(cov_data) %*% t(diff))
+    }
+  }
+  return(dstM)
+}
+
+```
+
+```{r}
+mhl_dst_dt = dist_mahala(dt)
+
+```
+
+```{r}
+a = 1:10
+a[c(TRUE,TRUE,FALSE,TRUE)]
+```
+
+```{r}
+cov_data = cov(dt)
+  n_row = nrow(dt)
+  dstM = matrix(nrow = n_row, ncol = n_row)
+  for (i in 1:(n_row-1)) {
+    for (j in (i+1):n_row) {
+      diff=as.matrix(dt[i,]-dt[j,]) 
+      dstM[i,j] = sqrt(diff %*% solve(cov_data) %*% t(diff))
+    }
+  }
+```
