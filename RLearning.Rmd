@@ -1,6 +1,9 @@
 ---
-title: "Untitled"
-output: github_document
+title: "My Document"
+author: "Me"
+output:
+  github_document:
+    keep_html: true
 ---
 
 ```{r,echo=TRUE,comment='', results='show'}
