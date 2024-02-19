@@ -6,6 +6,5 @@ output: github_document
 ```{r,echo=TRUE,comment='', results='show'}
 a = 10:1  
 a[c(TRUE,FALSE)]
-
 ``` 
 
